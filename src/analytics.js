@@ -35,7 +35,9 @@ var requestCutestuff = function(numberOfCutestuffsInSession) {
 
 if (process.env.NODE_ENV === "development") {
   var assertNumberOfCutestuffsInSession = function(numberOfCutestuffsInSession) {
-    asserts.assertString("Number of Cutestuffs in Session", 
+    asserts.assertInt("Number of Cutestuffs in Session", 
+      numberOfCutestuffsInSession);
+    asserts.assertMin("Number of Cutestuffs in Session", 1, 
       numberOfCutestuffsInSession);
   };
 }
