@@ -8,15 +8,11 @@ type float
 
 type bool
 
-property "Animal"
-  type string
-  matches "Puppy" | "Random"
-
 property "Number of Gifs in Session"
   type int
   min 1
 
-event "Show Cute Gif"
+event "Cute Gif Shown"
   description "When user clicks a button to show cutestuff"
 
   property "Number of Gifs in Session"
