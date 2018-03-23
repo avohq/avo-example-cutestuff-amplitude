@@ -28,7 +28,7 @@ class App extends Component {
           <button
             className="Button"
             onClick={() => {
-              Analytics.showCuteGif(this.state.numberOfGifsInSession + 1);
+              Analytics.requestCutestuff(this.state.numberOfGifsInSession + 1);
               this.setState({pictureUrl: null}, () => {
                 giphyRandom.get({tag: 'cute baby animal'}).then(data => {
                   this.setState({

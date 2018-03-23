@@ -19,26 +19,26 @@ if (process.env.NODE_ENV !== "production") {
   asserts = require("avo-assert-js");
 }
 
-var showCuteGif = function(numberOfGifsInSession) {
+var requestCutestuff = function(numberOfCutestuffsInSession) {
   if (process.env.NODE_ENV === "development") {
-    assertNumberOfGifsInSession(numberOfGifsInSession);
+    assertNumberOfCutestuffsInSession(numberOfCutestuffsInSession);
   }
   
   if (process.env.NODE_ENV === "development") {
-    console.log("[avo] Event sent:", "Show Cute Gif", {
-      "Number of Gifs in Session": numberOfGifsInSession});
+    console.log("[avo] Event sent:", "Request Cutestuff", {
+      "Number of Cutestuffs in Session": numberOfCutestuffsInSession});
   }
   
-  amplitude.logEvent("Show Cute Gif", {
-    "Number of Gifs in Session": numberOfGifsInSession});
+  amplitude.logEvent("Request Cutestuff", {
+    "Number of Cutestuffs in Session": numberOfCutestuffsInSession});
 };
 
 if (process.env.NODE_ENV === "development") {
-  var assertNumberOfGifsInSession = function(numberOfGifsInSession) {
-    asserts.assertInt("Number of Gifs in Session", numberOfGifsInSession);
-    asserts.assertMin("Number of Gifs in Session", 1, numberOfGifsInSession);
+  var assertNumberOfCutestuffsInSession = function(numberOfCutestuffsInSession) {
+    asserts.assertString("Number of Cutestuffs in Session", 
+      numberOfCutestuffsInSession);
   };
 }
 
-exports.showCuteGif = showCuteGif;
+exports.requestCutestuff = requestCutestuff;
 

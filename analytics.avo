@@ -8,9 +8,8 @@ type float
 
 type bool
 
-
 property "Number of Cutestuffs in Session"
-  type string
+  type float
 
 event "Request Cutestuff"
   description "When user clicks a button to show cutestuff"
