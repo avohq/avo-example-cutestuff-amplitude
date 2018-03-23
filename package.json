@@ -1,0 +1,27 @@
+{
+  "name": "avo-example-kittens-amplitude",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://avohq.github.io/avo-example-kittens-amplitude",
+  "dependencies": {
+    "avo": "^0.0.5",
+    "avo-amplitude-js": "1.0.0",
+    "avo-assert-js": "1.0.0",
+    "avo-segment-js": "1.2.0",
+    "axios": "0.18.0",
+    "gh-pages": "1.1.0",
+    "giphy-random": "1.0.5",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
+    "avo": "avo"
+  }
+}

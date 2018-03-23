@@ -1,0 +1,13 @@
+schema: analytics.avo
+targets:
+  Web:
+    devPlatform: Web
+    analyticsTool: Amplitude
+    language: JavaScript
+    dist: src/analytics.js
+    platform:
+      amplitude:
+        analyticsPackage: avo-amplitude-js
+        apiKeys:
+          dev: 26aeb7d9e9737f62d9bc9d10f7efdc9a
+          prod: 26aeb7d9e9737f62d9bc9d10f7efdc9a

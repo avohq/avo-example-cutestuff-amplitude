@@ -1,0 +1,53 @@
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 50px;
+  background-color: #f9f9f9;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.Title {
+  color: #dddddd;
+}
+
+.Counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.Button {
+  padding: 12px 20px 12px 20px;
+  border-radius: 5px;
+  border: none;
+  background: #1cb189;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.Button:hover {
+  background-color: #189171;
+  transition: background-color 150ms;
+}
+
+.Value {
+  margin: 0 10px;
+  padding: 12px 20px 12px 20px;
+  border: 1px solid #1cb189;
+  color: #1cb189;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.Links,
+.Links a {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #dddddd;
+}
