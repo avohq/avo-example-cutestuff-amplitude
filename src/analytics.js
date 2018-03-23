@@ -34,15 +34,6 @@ var showCuteGif = function(numberOfGifsInSession) {
 };
 
 if (process.env.NODE_ENV === "development") {
-  var assertAnimal = function(animal) {
-    asserts.assertString("Animal", animal);
-    if (animal !== "Puppy" && animal !== "Random") {
-      console.warn("Animal", "should match one of the following values [", 
-        "Puppy | Random", "] but you provided the value", 
-        JSON.stringify(animal));
-    }
-  };
-  
   var assertNumberOfGifsInSession = function(numberOfGifsInSession) {
     asserts.assertInt("Number of Gifs in Session", numberOfGifsInSession);
     asserts.assertMin("Number of Gifs in Session", 1, numberOfGifsInSession);

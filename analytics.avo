@@ -12,7 +12,7 @@ property "Number of Gifs in Session"
   type int
   min 1
 
-event "Cute Gif Shown"
+event "Show Cute Gif"
   description "When user clicks a button to show cutestuff"
 
   property "Number of Gifs in Session"
