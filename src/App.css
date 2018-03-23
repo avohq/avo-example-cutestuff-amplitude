@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  padding: 50px;
+  padding: 15px;
   background-color: #f9f9f9;
   font-size: 18px;
   box-sizing: border-box;
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px 0;
+  margin: 25px 0;
 }
 
 .Button {
@@ -43,6 +43,12 @@
   color: #1cb189;
   background: #ffffff;
   border-radius: 5px;
+}
+
+.Loading {
+  padding: 50px;
+  color: #dddddd;
+  font-weight: 700;
 }
 
 .Links,

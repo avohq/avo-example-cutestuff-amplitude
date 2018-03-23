@@ -19,12 +19,8 @@ if (process.env.NODE_ENV !== "production") {
   asserts = require("avo-assert-js");
 }
 
-var showCuteGif = function(animal) {
-  if (process.env.NODE_ENV !== "production") {
-    assertAnimal(animal);
-  }
-  
-  amplitude.logEvent("Show Cute Gif", {"Animal": animal});
+var showCuteGif = function() {
+  amplitude.logEvent("Show Cute Gif", {});
 };
 
 if (process.env.NODE_ENV !== "production") {
@@ -38,11 +34,6 @@ if (process.env.NODE_ENV !== "production") {
   
   var assertAnimal = function(animal) {
     asserts.assertString("Animal", animal);
-    if (animal !== "Puppy" && animal !== "Kitten") {
-      console.warn("Animal", "should match one of the following values [", 
-        "Puppy | Kitten", "] but you provided the value", 
-        JSON.stringify(animal));
-    }
   };
 }
 

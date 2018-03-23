@@ -8,19 +8,5 @@ type float
 
 type bool
 
-property "Old Value"
-  description "Counter value before button was clicked"
-  type int
-
-property "New Value"
-  description "Counter value after button was clicked"
-  type int
-
-property "Animal"
-  type string
-  matches "Puppy" | "Kitten"
-
 event "Show Cute Gif"
   description "When user clicks a button to show cutestuff"
-
-  property "Animal"
