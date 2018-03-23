@@ -15,7 +15,8 @@ class App extends Component {
     super(props);
     this.state = {
       pictureUrl: null,
-      init: true
+      init: true,
+      numberOfGifsInSession: 0
     };
   }
 
@@ -27,12 +28,13 @@ class App extends Component {
           <button
             className="Button"
             onClick={() => {
-              Analytics.showCuteGif();
+              Analytics.showCuteGif(this.state.numberOfGifsInSession + 1);
               this.setState({pictureUrl: null}, () => {
                 giphyRandom.get({tag: 'cute baby animal'}).then(data => {
                   this.setState({
                     pictureUrl: data.fixed_width_downsampled_url,
-                    init: false
+                    init: false,
+                    numberOfGifsInSession: this.state.numberOfGifsInSession + 1
                   });
                 });
               });

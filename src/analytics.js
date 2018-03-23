@@ -19,21 +19,33 @@ if (process.env.NODE_ENV !== "production") {
   asserts = require("avo-assert-js");
 }
 
-var showCuteGif = function() {
-  amplitude.logEvent("Show Cute Gif", {});
+var showCuteGif = function(numberOfGifsInSession) {
+  if (process.env.NODE_ENV === "development") {
+    assertNumberOfGifsInSession(numberOfGifsInSession);
+  }
+  
+  if (process.env.NODE_ENV === "development") {
+    console.log("[avo] Event sent:", "Show Cute Gif", {
+      "Number of Gifs in Session": numberOfGifsInSession});
+  }
+  
+  amplitude.logEvent("Show Cute Gif", {
+    "Number of Gifs in Session": numberOfGifsInSession});
 };
 
-if (process.env.NODE_ENV !== "production") {
-  var assertOldValue = function(oldValue) {
-    asserts.assertInt("Old Value", oldValue);
-  };
-  
-  var assertNewValue = function(newValue) {
-    asserts.assertInt("New Value", newValue);
-  };
-  
+if (process.env.NODE_ENV === "development") {
   var assertAnimal = function(animal) {
     asserts.assertString("Animal", animal);
+    if (animal !== "Puppy" && animal !== "Random") {
+      console.warn("Animal", "should match one of the following values [", 
+        "Puppy | Random", "] but you provided the value", 
+        JSON.stringify(animal));
+    }
+  };
+  
+  var assertNumberOfGifsInSession = function(numberOfGifsInSession) {
+    asserts.assertInt("Number of Gifs in Session", numberOfGifsInSession);
+    asserts.assertMin("Number of Gifs in Session", 1, numberOfGifsInSession);
   };
 }
 

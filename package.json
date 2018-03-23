@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "http://avohq.github.io/avo-example-kittens-amplitude",
   "dependencies": {
-    "avo": "^0.0.5",
+    "avo": "0.0.6",
     "avo-amplitude-js": "1.0.0",
-    "avo-assert-js": "1.0.0",
+    "avo-assert-js": "1.1.1",
     "avo-segment-js": "1.2.0",
     "axios": "0.18.0",
     "gh-pages": "1.1.0",
