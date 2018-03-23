@@ -3,8 +3,6 @@ import React, {Component} from 'react';
 import './App.css';
 import * as Analytics from './analytics';
 
-const copyToClipboard = () => console.log('Copied!');
-
 const GiphyRandom = require('giphy-random');
 
 const giphyRandom = new GiphyRandom({
