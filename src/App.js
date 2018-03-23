@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import './App.css';
 import * as Analytics from './analytics';
 
+const copyToClipboard = () => console.log('Copied!');
+
 const GiphyRandom = require('giphy-random');
 
 const giphyRandom = new GiphyRandom({
@@ -40,11 +42,11 @@ class App extends Component {
               });
             }}
           >
-            Cute Baby Animal
+            Gimme Cutestuff
           </button>
         </div>
         {this.state.pictureUrl ? (
-          <img width="400px" src={this.state.pictureUrl} alt="cutestuff" />
+          <img height="300px" src={this.state.pictureUrl} alt="cutestuff" />
         ) : (
           !this.state.init && <div className="Loading">Loading...</div>
         )}
