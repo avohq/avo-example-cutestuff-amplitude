@@ -8,11 +8,11 @@ type float
 
 type bool
 
-property "Number of Gifs in Session"
-  type int
-  min 1
 
-event "Show Cute Gif"
+property "Number of Cutestuffs in Session"
+  type string
+
+event "Request Cutestuff"
   description "When user clicks a button to show cutestuff"
 
-  property "Number of Gifs in Session"
+  property "Number of Cutestuffs in Session"
