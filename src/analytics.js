@@ -15,16 +15,12 @@ var amplitudeProdApiKey = "26aeb7d9e9737f62d9bc9d10f7efdc9a";
 
 var asserts;
 
-var showCuteGif = function(animal) {
+var gimmeCutestuff = function() {
   if (isDev === true) {
-    assertAnimal(animal);
+    console.log("[avo] Event sent:", "Gimme Cutestuff", {});
   }
   
-  if (isDev === true) {
-    console.log("[avo] Event sent:", "Show Cute Gif", {"Animal": animal});
-  }
-  
-  amplitude.logEvent("Show Cute Gif", {"Animal": animal});
+  amplitude.logEvent("Gimme Cutestuff", {});
 };
 
 if (isDev === true) {
@@ -44,9 +40,14 @@ if (isDev === true) {
   var assertOldValue = function(oldValue) {
     asserts.assertInt("Old Value", oldValue);
   };
+  
+  var assertNumberOfGifsInSession = function(numberOfGifsInSession) {
+    asserts.assertInt("Number of Gifs in Session", numberOfGifsInSession);
+    asserts.assertMin("Number of Gifs in Session", 0, numberOfGifsInSession);
+  };
 }
 
-exports.showCuteGif = showCuteGif;
+exports.gimmeCutestuff = gimmeCutestuff;
 
 
 function setup_(options) {

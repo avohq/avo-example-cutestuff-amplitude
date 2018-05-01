@@ -58,20 +58,31 @@
       "validations": [],
       "optional": false,
       "revenue": false
+    },
+    "c6e64092-9bfa-48c0-bfce-8b1ee78b3653": {
+      "id": "c6e64092-9bfa-48c0-bfce-8b1ee78b3653",
+      "name": "Number of Gifs in Session",
+      "description": "",
+      "type": "int",
+      "sendAs": "event",
+      "validations": [
+        {
+          "min": {
+            "int": 0
+          }
+        }
+      ],
+      "optional": false,
+      "revenue": false
     }
   },
   "events": {
     "48c680f1-8dad-45dd-8cbb-927e729ab70b": {
       "id": "48c680f1-8dad-45dd-8cbb-927e729ab70b",
-      "name": "Show Cute Gif",
+      "name": "Gimme Cutestuff",
       "type": "event",
-      "description": "When user clicks a button to show cutestuff",
-      "properties": {
-        "91b27dfd-191d-4819-ade7-623002155dbc": {
-          "id": "91b27dfd-191d-4819-ade7-623002155dbc",
-          "description": ""
-        }
-      },
+      "description": "When user clicks the \"Gimme Cutestuff\" butt \"Gimme Cutestuff\" buttonon",
+      "properties": {},
       "order": 0
     }
   }
