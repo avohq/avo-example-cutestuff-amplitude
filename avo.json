@@ -74,6 +74,16 @@
       ],
       "optional": false,
       "revenue": false
+    },
+    "378d14c7-2083-4795-8668-e53c143e2464": {
+      "id": "378d14c7-2083-4795-8668-e53c143e2464",
+      "name": "Gif URL",
+      "description": "",
+      "type": "string",
+      "sendAs": "event",
+      "validations": [],
+      "optional": false,
+      "revenue": false
     }
   },
   "events": {
@@ -81,8 +91,13 @@
       "id": "48c680f1-8dad-45dd-8cbb-927e729ab70b",
       "name": "Gimme Cutestuff",
       "type": "event",
-      "description": "When user clicks the \"Gimme Cutestuff\" butt \"Gimme Cutestuff\" buttonon",
-      "properties": {},
+      "description": "When user clicks the \"Gimme Cutestuff\" button",
+      "properties": {
+        "378d14c7-2083-4795-8668-e53c143e2464": {
+          "id": "378d14c7-2083-4795-8668-e53c143e2464",
+          "description": ""
+        }
+      },
       "order": 0
     }
   }

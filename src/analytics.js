@@ -15,12 +15,16 @@ var amplitudeProdApiKey = "26aeb7d9e9737f62d9bc9d10f7efdc9a";
 
 var asserts;
 
-var gimmeCutestuff = function() {
+var gimmeCutestuff = function(gifUrl) {
   if (isDev === true) {
-    console.log("[avo] Event sent:", "Gimme Cutestuff", {});
+    assertGifUrl(gifUrl);
   }
   
-  amplitude.logEvent("Gimme Cutestuff", {});
+  if (isDev === true) {
+    console.log("[avo] Event sent:", "Gimme Cutestuff", {"Gif URL": gifUrl});
+  }
+  
+  amplitude.logEvent("Gimme Cutestuff", {"Gif URL": gifUrl});
 };
 
 if (isDev === true) {
@@ -44,6 +48,10 @@ if (isDev === true) {
   var assertNumberOfGifsInSession = function(numberOfGifsInSession) {
     asserts.assertInt("Number of Gifs in Session", numberOfGifsInSession);
     asserts.assertMin("Number of Gifs in Session", 0, numberOfGifsInSession);
+  };
+  
+  var assertGifUrl = function(gifUrl) {
+    asserts.assertString("Gif URL", gifUrl);
   };
 }
 
