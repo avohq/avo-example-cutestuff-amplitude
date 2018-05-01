@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       pictureUrl: null,
       isLoading: false,
-      numberOfGifsInSession: 1
+      gifCounter: 1
     };
   }
 
@@ -49,7 +49,7 @@ class App extends Component {
                   this.setState({
                     isLoading: false,
                     pictureUrl: data.fixed_width_downsampled_url,
-                    numberOfGifsInSession: this.state.numberOfGifsInSession + 1
+                    gifCounter: this.state.gifCounter + 1
                   });
                 });
               });
