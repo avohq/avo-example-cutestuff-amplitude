@@ -12,6 +12,9 @@ property "Number of Cutestuffs in Session"
   type int
   min 1
 
+property "Link"
+  type string
+
 event "Request Cutestuff"
   description "When user clicks a button to show cutestuff"
 

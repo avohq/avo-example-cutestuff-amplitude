@@ -10,6 +10,8 @@ const giphyRandom = new GiphyRandom({
   rating: 'Y'
 });
 
+const copyToClipboard = () => console.log('Copied!');
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -47,6 +49,17 @@ class App extends Component {
           <img height="300px" src={this.state.pictureUrl} alt="cutestuff" />
         ) : (
           !this.state.init && <div className="Loading">Loading...</div>
+        )}
+        {this.state.pictureUrl && (
+          <button
+            className="Button"
+            onClick={() => {
+              copyToClipboard();
+              Analytics.copyShareLink(this.state.pictureUrl);
+            }}
+          >
+            Copy Link to Gif
+          </button>
         )}
       </div>
     );

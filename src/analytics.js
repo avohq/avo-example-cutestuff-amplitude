@@ -33,6 +33,18 @@ var requestCutestuff = function(numberOfCutestuffsInSession) {
     "Number of Cutestuffs in Session": numberOfCutestuffsInSession});
 };
 
+var copyShareLink = function(link) {
+  if (process.env.NODE_ENV === "development") {
+    assertLink(link);
+  }
+  
+  if (process.env.NODE_ENV === "development") {
+    console.log("[avo] Event sent:", "Copy Share Link", {"Link": link});
+  }
+  
+  amplitude.logEvent("Copy Share Link", {"Link": link});
+};
+
 if (process.env.NODE_ENV === "development") {
   var assertNumberOfCutestuffsInSession = function(numberOfCutestuffsInSession) {
     asserts.assertInt("Number of Cutestuffs in Session", 
@@ -40,7 +52,12 @@ if (process.env.NODE_ENV === "development") {
     asserts.assertMin("Number of Cutestuffs in Session", 1, 
       numberOfCutestuffsInSession);
   };
+  
+  var assertLink = function(link) {
+    asserts.assertString("Link", link);
+  };
 }
 
 exports.requestCutestuff = requestCutestuff;
+exports.copyShareLink = copyShareLink;
 
