@@ -320,10 +320,6 @@ avo-amplitude-js@1.0.0:
   dependencies:
     amplitude-js "^4.1.0"
 
-avo-assert-js@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/avo-assert-js/-/avo-assert-js-1.0.0.tgz#948d5688fc5bd4f814dbfd4fc77294f38c9bd00d"
-
 avo-assert-js@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/avo-assert-js/-/avo-assert-js-1.1.1.tgz#5ed4f5f0211604e6694bc99eccc7aa055927d2a0"
