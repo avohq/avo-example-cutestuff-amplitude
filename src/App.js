@@ -15,7 +15,8 @@ class App extends Component {
     super(props);
     this.state = {
       pictureUrl: null,
-      isLoading: false
+      isLoading: false,
+      numberOfGifsInSession: 1
     };
   }
 
@@ -47,7 +48,8 @@ class App extends Component {
                 giphyRandom.get({tag: 'cute baby animal'}).then(data => {
                   this.setState({
                     isLoading: false,
-                    pictureUrl: data.fixed_width_downsampled_url
+                    pictureUrl: data.fixed_width_downsampled_url,
+                    numberOfGifsInSession: this.state.numberOfGifsInSession + 1
                   });
                 });
               });
