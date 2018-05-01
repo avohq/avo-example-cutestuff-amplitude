@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       pictureUrl: null,
       isLoading: false,
-      gifCounter: 1
+      gifCounter: 0
     };
   }
 
@@ -42,15 +42,17 @@ class App extends Component {
           <button
             className="Button"
             onClick={() => {
-              Analytics.showCuteGif('Gimme Cutestuff');
-
               this.setState({pictureUrl: null, isLoading: true}, () => {
                 giphyRandom.get({tag: 'cute baby animal'}).then(data => {
-                  this.setState({
-                    isLoading: false,
-                    pictureUrl: data.fixed_width_downsampled_url,
-                    gifCounter: this.state.gifCounter + 1
-                  });
+                  let gifUrl = data.fixed_width_downsampled_url;
+                  this.setState(
+                    {
+                      isLoading: false,
+                      pictureUrl: gifUrl,
+                      gifCounter: this.state.gifCounter + 1
+                    },
+                    () => Analytics.gimmeCutestuff(gifUrl)
+                  );
                 });
               });
             }}
