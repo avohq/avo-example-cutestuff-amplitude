@@ -1,0 +1,78 @@
+{
+  "types": [
+    {
+      "type": "string"
+    },
+    {
+      "type": "int"
+    },
+    {
+      "type": "float"
+    },
+    {
+      "type": "bool"
+    }
+  ],
+  "properties": {
+    "68aad45e-10b5-4a1b-953e-d86446556101": {
+      "id": "68aad45e-10b5-4a1b-953e-d86446556101",
+      "name": "New Value",
+      "description": "Counter value after button was clicked",
+      "type": "int",
+      "sendAs": "event",
+      "validations": [],
+      "optional": false,
+      "revenue": false
+    },
+    "91b27dfd-191d-4819-ade7-623002155dbc": {
+      "id": "91b27dfd-191d-4819-ade7-623002155dbc",
+      "name": "Animal",
+      "description": "",
+      "type": "string",
+      "sendAs": "event",
+      "validations": [
+        {
+          "matches": [
+            {
+              "literal": {
+                "string": "Puppy"
+              }
+            },
+            {
+              "literal": {
+                "string": "Kitten"
+              }
+            }
+          ]
+        }
+      ],
+      "optional": false,
+      "revenue": false
+    },
+    "9f7dab04-2463-485d-a91f-8885e3a55093": {
+      "id": "9f7dab04-2463-485d-a91f-8885e3a55093",
+      "name": "Old Value",
+      "description": "Counter value before button was clicked",
+      "type": "int",
+      "sendAs": "event",
+      "validations": [],
+      "optional": false,
+      "revenue": false
+    }
+  },
+  "events": {
+    "48c680f1-8dad-45dd-8cbb-927e729ab70b": {
+      "id": "48c680f1-8dad-45dd-8cbb-927e729ab70b",
+      "name": "Show Cute Gif",
+      "type": "event",
+      "description": "When user clicks a button to show cutestuff",
+      "properties": {
+        "91b27dfd-191d-4819-ade7-623002155dbc": {
+          "id": "91b27dfd-191d-4819-ade7-623002155dbc",
+          "description": ""
+        }
+      },
+      "order": 0
+    }
+  }
+}
