@@ -8,28 +8,59 @@ if (typeof __DEV__ !== 'undefined') {
 }
 
 
-var amplitude = require("avo-amplitude-js");
+var mixpanel = require("avo-mixpanel-browser");
 
-var amplitudeDevApiKey = "26aeb7d9e9737f62d9bc9d10f7efdc9a";
-var amplitudeProdApiKey = "26aeb7d9e9737f62d9bc9d10f7efdc9a";
+var mixpanelDevApiKey = "26aeb7d9e9737f62d9bc9d10f7efdc9a";
+var mixpanelProdApiKey = "26aeb7d9e9737f62d9bc9d10f7efdc9a";
 
 var asserts;
 
-var gimmeCutestuff = function(gifUrl) {
+var gimmeCutestuff = function(gifUrl, animal, numberOfGifsInSession) {
   if (isDev === true) {
     assertGifUrl(gifUrl);
+    assertAnimal(animal);
+    assertNumberOfGifsInSession(numberOfGifsInSession);
   }
   
   if (isDev === true) {
-    console.log("[avo] Event sent:", "Gimme Cutestuff", {"Gif URL": gifUrl});
+    console.log("[avo] Event sent:", "Gimme Cutestuff", {"Gif URL": gifUrl, 
+      "Animal": animal, "Number of Gifs in Session": numberOfGifsInSession});
   }
   
-  amplitude.logEvent("Gimme Cutestuff", {"Gif URL": gifUrl});
+  mixpanel.logEvent("Gimme Cutestuff", {"Gif URL": gifUrl, "Animal": animal, 
+    "Number of Gifs in Session": numberOfGifsInSession});
+};
+
+var logRevenue = function(productId_, quantity_, price_, revenueType_) {
+  if (isDev === true) {
+    console.log("[avo] Event sent:", "Log Revenue", {});
+  }
+  
+  mixpanel.logRevenue(productId_, quantity_, price_, revenueType_, {});
 };
 
 if (isDev === true) {
+  var assertGifUrl = function(gifUrl) {
+    asserts.assertString("Gif URL", gifUrl);
+  };
+  
   var assertNewValue = function(newValue) {
     asserts.assertInt("New Value", newValue);
+  };
+  
+  var assertNumberOfEstatesInSearch = function(numberOfEstatesInSearch) {
+    asserts.assertString("Number of estates in Search", 
+      numberOfEstatesInSearch);
+    if (numberOfEstatesInSearch !== "house" && numberOfEstatesInSearch !== 
+        "flat") {
+      console.warn("Number of estates in Search", 
+        "should match one of the following values [", "house | flat", 
+        "] but you provided the value", 
+        JSON.stringify(numberOfEstatesInSearch));
+    }
+    
+    asserts.assertMin("Number of estates in Search", 1, 
+      numberOfEstatesInSearch);
   };
   
   var assertAnimal = function(animal) {
@@ -45,17 +76,23 @@ if (isDev === true) {
     asserts.assertInt("Old Value", oldValue);
   };
   
-  var assertNumberOfGifsInSession = function(numberOfGifsInSession) {
-    asserts.assertInt("Number of Gifs in Session", numberOfGifsInSession);
-    asserts.assertMin("Number of Gifs in Session", 0, numberOfGifsInSession);
+  var assertTypeOfEstate = function(typeOfEstate) {
+    asserts.assertString("Type of estate", typeOfEstate);
+    if (typeOfEstate !== "flat" && typeOfEstate !== "house") {
+      console.warn("Type of estate", 
+        "should match one of the following values [", "flat | house", 
+        "] but you provided the value", JSON.stringify(typeOfEstate));
+    }
   };
   
-  var assertGifUrl = function(gifUrl) {
-    asserts.assertString("Gif URL", gifUrl);
+  var assertNumberOfGifsInSession = function(numberOfGifsInSession) {
+    asserts.assertInt("Number of Gifs in Session", numberOfGifsInSession);
+    asserts.assertMin("Number of Gifs in Session", 1, numberOfGifsInSession);
   };
 }
 
 exports.gimmeCutestuff = gimmeCutestuff;
+exports.logRevenue = logRevenue;
 
 
 function setup_(options) {
@@ -63,10 +100,10 @@ function setup_(options) {
     isDev = false;
   }
 
-  var amplitudeKeyToUse = (options && options.useProductionKey) ?
-    amplitudeProdApiKey :
-    amplitudeDevApiKey;
-  amplitude.init(amplitudeKeyToUse);
+  var mixpanelKeyToUse = (options && options.useProductionKey) ?
+    mixpanelProdApiKey :
+    mixpanelDevApiKey;
+  mixpanel.init(mixpanelKeyToUse);
 
 }
 

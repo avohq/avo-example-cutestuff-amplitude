@@ -14,6 +14,16 @@
     }
   ],
   "properties": {
+    "378d14c7-2083-4795-8668-e53c143e2464": {
+      "id": "378d14c7-2083-4795-8668-e53c143e2464",
+      "name": "Gif URL",
+      "description": "",
+      "type": "string",
+      "sendAs": "event",
+      "validations": [],
+      "optional": false,
+      "revenue": false
+    },
     "68aad45e-10b5-4a1b-953e-d86446556101": {
       "id": "68aad45e-10b5-4a1b-953e-d86446556101",
       "name": "New Value",
@@ -21,6 +31,36 @@
       "type": "int",
       "sendAs": "event",
       "validations": [],
+      "optional": false,
+      "revenue": false
+    },
+    "80fd5dc1-64df-4ca0-ae6c-f522e39212de": {
+      "id": "80fd5dc1-64df-4ca0-ae6c-f522e39212de",
+      "name": "Number of estates in Search",
+      "description": "",
+      "type": "string",
+      "sendAs": "event",
+      "validations": [
+        {
+          "matches": [
+            {
+              "literal": {
+                "string": "house"
+              }
+            },
+            {
+              "literal": {
+                "string": "flat"
+              }
+            }
+          ]
+        },
+        {
+          "min": {
+            "int": 1
+          }
+        }
+      ],
       "optional": false,
       "revenue": false
     },
@@ -59,6 +99,31 @@
       "optional": false,
       "revenue": false
     },
+    "c5429840-39a4-4a7f-b047-866c5ebd4879": {
+      "id": "c5429840-39a4-4a7f-b047-866c5ebd4879",
+      "name": "Type of estate",
+      "description": "",
+      "type": "string",
+      "sendAs": "event",
+      "validations": [
+        {
+          "matches": [
+            {
+              "literal": {
+                "string": "flat"
+              }
+            },
+            {
+              "literal": {
+                "string": "house"
+              }
+            }
+          ]
+        }
+      ],
+      "optional": false,
+      "revenue": false
+    },
     "c6e64092-9bfa-48c0-bfce-8b1ee78b3653": {
       "id": "c6e64092-9bfa-48c0-bfce-8b1ee78b3653",
       "name": "Number of Gifs in Session",
@@ -68,20 +133,10 @@
       "validations": [
         {
           "min": {
-            "int": 0
+            "int": 1
           }
         }
       ],
-      "optional": false,
-      "revenue": false
-    },
-    "378d14c7-2083-4795-8668-e53c143e2464": {
-      "id": "378d14c7-2083-4795-8668-e53c143e2464",
-      "name": "Gif URL",
-      "description": "",
-      "type": "string",
-      "sendAs": "event",
-      "validations": [],
       "optional": false,
       "revenue": false
     }
@@ -96,9 +151,25 @@
         "378d14c7-2083-4795-8668-e53c143e2464": {
           "id": "378d14c7-2083-4795-8668-e53c143e2464",
           "description": ""
+        },
+        "91b27dfd-191d-4819-ade7-623002155dbc": {
+          "id": "91b27dfd-191d-4819-ade7-623002155dbc",
+          "description": ""
+        },
+        "c6e64092-9bfa-48c0-bfce-8b1ee78b3653": {
+          "id": "c6e64092-9bfa-48c0-bfce-8b1ee78b3653",
+          "description": ""
         }
       },
       "order": 0
+    },
+    "92a7a73b-c562-491d-ac45-bf00bf9017d6": {
+      "id": "92a7a73b-c562-491d-ac45-bf00bf9017d6",
+      "name": "Log Revenue",
+      "type": "revenue",
+      "description": "Built in Mixpanel event.",
+      "properties": {},
+      "order": 2
     }
   }
 }
