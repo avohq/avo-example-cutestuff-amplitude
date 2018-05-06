@@ -6,6 +6,7 @@
   "dependencies": {
     "avo": "0.5.0",
     "avo-amplitude-js": "1.0.0",
+    "avo-mixpanel-browser": "^1.0.0",
     "avo-segment-js": "1.2.0",
     "axios": "0.18.0",
     "gh-pages": "1.1.0",

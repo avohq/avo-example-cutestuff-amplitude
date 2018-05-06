@@ -324,6 +324,12 @@ avo-assert-js@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/avo-assert-js/-/avo-assert-js-1.1.1.tgz#5ed4f5f0211604e6694bc99eccc7aa055927d2a0"
 
+avo-mixpanel-browser@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/avo-mixpanel-browser/-/avo-mixpanel-browser-1.0.0.tgz#33a8756fea65d074390bebb924df1f93073eeb99"
+  dependencies:
+    mixpanel-browser "^2.20.0"
+
 avo-segment-js@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/avo-segment-js/-/avo-segment-js-1.2.0.tgz#7d518a082802d7b945bd07d5118333daf2ce7cb2"
@@ -4271,6 +4277,10 @@ minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
 minimist@~0.0.1:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
+
+mixpanel-browser@^2.20.0:
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/mixpanel-browser/-/mixpanel-browser-2.22.0.tgz#25329bf5dc141ee40827d6fa867ff1f89ba36b7f"
 
 mkdirp@0.5.0:
   version "0.5.0"

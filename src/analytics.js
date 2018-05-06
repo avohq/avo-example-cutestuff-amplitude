@@ -10,25 +10,21 @@ if (typeof __DEV__ !== 'undefined') {
 
 var mixpanel = require("avo-mixpanel-browser");
 
-var mixpanelDevApiKey = "26aeb7d9e9737f62d9bc9d10f7efdc9a";
-var mixpanelProdApiKey = "26aeb7d9e9737f62d9bc9d10f7efdc9a";
+var mixpanelDevApiKey = "ddf44285cd0e775bd5e52393038b3810";
+var mixpanelProdApiKey = "ddf44285cd0e775bd5e52393038b3810";
 
 var asserts;
 
-var gimmeCutestuff = function(gifUrl, animal, numberOfGifsInSession) {
+var gimmeCutestuff = function(gifUrl) {
   if (isDev === true) {
     assertGifUrl(gifUrl);
-    assertAnimal(animal);
-    assertNumberOfGifsInSession(numberOfGifsInSession);
   }
   
   if (isDev === true) {
-    console.log("[avo] Event sent:", "Gimme Cutestuff", {"Gif URL": gifUrl, 
-      "Animal": animal, "Number of Gifs in Session": numberOfGifsInSession});
+    console.log("[avo] Event sent:", "Gimme Cutestuff", {"Gif URL": gifUrl});
   }
   
-  mixpanel.logEvent("Gimme Cutestuff", {"Gif URL": gifUrl, "Animal": animal, 
-    "Number of Gifs in Session": numberOfGifsInSession});
+  mixpanel.logEvent("Gimme Cutestuff", {"Gif URL": gifUrl});
 };
 
 var logRevenue = function(productId_, quantity_, price_, revenueType_) {
