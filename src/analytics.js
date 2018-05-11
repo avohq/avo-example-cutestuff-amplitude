@@ -36,6 +36,15 @@ var logRevenue = function(productId_, quantity_, price_, revenueType_) {
 };
 
 if (isDev === true) {
+  var assertCountry = function(country) {
+    asserts.assertString("Country", country);
+    if (country !== "Iceland" && country !== "US") {
+      console.warn("Country", "should match one of the following values [", 
+        "Iceland | US", "] but you provided the value", 
+        JSON.stringify(country));
+    }
+  };
+  
   var assertGifUrl = function(gifUrl) {
     asserts.assertString("Gif URL", gifUrl);
   };

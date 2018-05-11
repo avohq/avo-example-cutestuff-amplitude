@@ -14,6 +14,31 @@
     }
   ],
   "properties": {
+    "0a53f14a-95e8-4d96-afdb-2f0cea8f0c45": {
+      "id": "0a53f14a-95e8-4d96-afdb-2f0cea8f0c45",
+      "name": "Country",
+      "description": "",
+      "type": "string",
+      "sendAs": "event",
+      "validations": [
+        {
+          "matches": [
+            {
+              "literal": {
+                "string": "Iceland"
+              }
+            },
+            {
+              "literal": {
+                "string": "US"
+              }
+            }
+          ]
+        }
+      ],
+      "optional": false,
+      "revenue": false
+    },
     "378d14c7-2083-4795-8668-e53c143e2464": {
       "id": "378d14c7-2083-4795-8668-e53c143e2464",
       "name": "Gif URL",
@@ -127,7 +152,7 @@
     "c6e64092-9bfa-48c0-bfce-8b1ee78b3653": {
       "id": "c6e64092-9bfa-48c0-bfce-8b1ee78b3653",
       "name": "Number of Gifs in Session",
-      "description": "",
+      "description": "This should be sent when",
       "type": "int",
       "sendAs": "event",
       "validations": [
