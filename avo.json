@@ -14,179 +14,31 @@
     }
   ],
   "properties": {
-    "0a53f14a-95e8-4d96-afdb-2f0cea8f0c45": {
-      "id": "0a53f14a-95e8-4d96-afdb-2f0cea8f0c45",
-      "name": "Country",
-      "description": "",
-      "type": "string",
-      "sendAs": "event",
-      "validations": [
-        {
-          "matches": [
-            {
-              "literal": {
-                "string": "Iceland"
-              }
-            },
-            {
-              "literal": {
-                "string": "US"
-              }
-            }
-          ]
-        }
-      ],
-      "optional": false,
-      "revenue": false
-    },
-    "378d14c7-2083-4795-8668-e53c143e2464": {
-      "id": "378d14c7-2083-4795-8668-e53c143e2464",
-      "name": "Gif URL",
+    "aa125a17-0f1f-411a-b401-ca539e3a0728": {
+      "id": "aa125a17-0f1f-411a-b401-ca539e3a0728",
+      "name": "Gif Url",
       "description": "",
       "type": "string",
       "sendAs": "event",
       "validations": [],
+      "analyticsTools": [],
       "optional": false,
-      "revenue": false
-    },
-    "68aad45e-10b5-4a1b-953e-d86446556101": {
-      "id": "68aad45e-10b5-4a1b-953e-d86446556101",
-      "name": "New Value",
-      "description": "Counter value after button was clicked",
-      "type": "int",
-      "sendAs": "event",
-      "validations": [],
-      "optional": false,
-      "revenue": false
-    },
-    "80fd5dc1-64df-4ca0-ae6c-f522e39212de": {
-      "id": "80fd5dc1-64df-4ca0-ae6c-f522e39212de",
-      "name": "Number of estates in Search",
-      "description": "",
-      "type": "string",
-      "sendAs": "event",
-      "validations": [
-        {
-          "matches": [
-            {
-              "literal": {
-                "string": "house"
-              }
-            },
-            {
-              "literal": {
-                "string": "flat"
-              }
-            }
-          ]
-        },
-        {
-          "min": {
-            "int": 1
-          }
-        }
-      ],
-      "optional": false,
-      "revenue": false
-    },
-    "91b27dfd-191d-4819-ade7-623002155dbc": {
-      "id": "91b27dfd-191d-4819-ade7-623002155dbc",
-      "name": "Animal",
-      "description": "",
-      "type": "string",
-      "sendAs": "event",
-      "validations": [
-        {
-          "matches": [
-            {
-              "literal": {
-                "string": "Puppy"
-              }
-            },
-            {
-              "literal": {
-                "string": "Kitten"
-              }
-            }
-          ]
-        }
-      ],
-      "optional": false,
-      "revenue": false
-    },
-    "9f7dab04-2463-485d-a91f-8885e3a55093": {
-      "id": "9f7dab04-2463-485d-a91f-8885e3a55093",
-      "name": "Old Value",
-      "description": "Counter value before button was clicked",
-      "type": "int",
-      "sendAs": "event",
-      "validations": [],
-      "optional": false,
-      "revenue": false
-    },
-    "c5429840-39a4-4a7f-b047-866c5ebd4879": {
-      "id": "c5429840-39a4-4a7f-b047-866c5ebd4879",
-      "name": "Type of estate",
-      "description": "",
-      "type": "string",
-      "sendAs": "event",
-      "validations": [
-        {
-          "matches": [
-            {
-              "literal": {
-                "string": "flat"
-              }
-            },
-            {
-              "literal": {
-                "string": "house"
-              }
-            }
-          ]
-        }
-      ],
-      "optional": false,
-      "revenue": false
-    },
-    "c6e64092-9bfa-48c0-bfce-8b1ee78b3653": {
-      "id": "c6e64092-9bfa-48c0-bfce-8b1ee78b3653",
-      "name": "Number of Gifs in Session",
-      "description": "This should be sent when",
-      "type": "int",
-      "sendAs": "event",
-      "validations": [
-        {
-          "min": {
-            "int": 1
-          }
-        }
-      ],
-      "optional": false,
-      "revenue": false
+      "builtIn": "NotBuiltIn",
+      "list": false
     }
   },
   "events": {
-    "48c680f1-8dad-45dd-8cbb-927e729ab70b": {
-      "id": "48c680f1-8dad-45dd-8cbb-927e729ab70b",
+    "d3188235-b212-46b2-a660-186280b32150": {
+      "id": "d3188235-b212-46b2-a660-186280b32150",
       "name": "Gimme Cutestuff",
-      "type": "event",
-      "description": "When user clicks the \"Gimme Cutestuff\" button",
+      "description": "",
       "properties": {
-        "378d14c7-2083-4795-8668-e53c143e2464": {
-          "id": "378d14c7-2083-4795-8668-e53c143e2464",
+        "aa125a17-0f1f-411a-b401-ca539e3a0728": {
+          "id": "aa125a17-0f1f-411a-b401-ca539e3a0728",
           "description": ""
         }
       },
       "order": 0
-    },
-    "92a7a73b-c562-491d-ac45-bf00bf9017d6": {
-      "id": "92a7a73b-c562-491d-ac45-bf00bf9017d6",
-      "name": "Log Revenue",
-      "type": "revenue",
-      "description": "Built in Mixpanel event.",
-      "properties": {},
-      "order": 2
     }
   }
 }
